@@ -13,9 +13,9 @@ import styles from './Counter.module.css';
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  // const [incrementAmount, setIncrementAmount] = useState('2');
 
-  const incrementValue = Number(incrementAmount) || 0;
+  // const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <div>
@@ -36,7 +36,7 @@ export function Counter() {
           +
         </button>
       </div>
-      <div className={styles.row}>
+      {/* <div className={styles.row}>
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
@@ -61,7 +61,7 @@ export function Counter() {
         >
           Add If Odd
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
