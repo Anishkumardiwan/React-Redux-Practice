@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
-const initialState = {
-  value: 0,
+const initialStateValue = {
+  count: 0,
   status: 'idle',
 };
 
@@ -16,19 +16,19 @@ const initialState = {
 // );
 
 export const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
+  name: 'myCounter',
+  initialState: initialStateValue,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     increment: (state) => {
-      state.value += 1;
+      state.count += 1;
     },
     decrement: (state) => {
-      state.value -= 1;
+      state.count -= 1;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action) => {
-      state.value += action.payload;
+      state.count += action.payload;
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -40,7 +40,7 @@ export const counterSlice = createSlice({
   //     })
   //     .addCase(incrementAsync.fulfilled, (state, action) => {
   //       state.status = 'idle';
-  //       state.value += action.payload;
+  //       state.count += action.payload;
   //     });
   // },
 });
@@ -48,7 +48,7 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 
-export const selectCount = (state) => state.counter.value;
+// export const selectCount = (state) => state.counter.count;
 
 // export const incrementIfOdd = (amount) => (dispatch, getState) => {
 //   const currentValue = selectCount(getState());

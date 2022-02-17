@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import Coin from './features/Coin/Coin';
+import Theme from './features/theme/Theme';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <header className="App-header">
         <Counter />
         <Coin />
+        <Theme />
       </header>
     </div>
   );

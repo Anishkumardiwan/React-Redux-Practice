@@ -11,11 +11,11 @@ import {
 import styles from './Counter.module.css';
 
 export function Counter() {
-  const count = useSelector(selectCount);
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
-  // const [incrementAmount, setIncrementAmount] = useState('2');
+  const [incrementAmount, setIncrementAmount] = useState('2');
 
-  // const incrementValue = Number(incrementAmount) || 0;
+  const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <div>
@@ -36,7 +36,7 @@ export function Counter() {
           +
         </button>
       </div>
-      {/* <div className={styles.row}>
+      <div className={styles.row}>
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
@@ -49,7 +49,7 @@ export function Counter() {
         >
           Add Amount
         </button>
-        <button
+        {/* <button
           className={styles.asyncButton}
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
@@ -60,8 +60,8 @@ export function Counter() {
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
-        </button>
-      </div> */}
+        </button> */}
+      </div>
     </div>
   );
 }
